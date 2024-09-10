@@ -1,22 +1,28 @@
 public class Filme {
     String nome;
-    int anoDeLancamento;
+    int anoLancamento;
     boolean incluidoNoPlano;
     double somaDasAvaliacoes;
-    int totalDeAvaliacoes;
+    int totalDeAvaliacao;
     int duracaoEmMinutos;
 
-    void exibeFichaTecnica(){
-        System.out.println("Nome do filme: " + nome);
-        System.out.println("Ano de lançamento: " + anoDeLancamento);
+
+    void exibirFilme(){
+        System.out.println("Nome: " + nome);
+        System.out.println("Ano: " + anoLancamento);
     }
 
-    void avalia(double nota){
+    void avaliar(double nota) {
         somaDasAvaliacoes += nota;
-        totalDeAvaliacoes++;
+        totalDeAvaliacao++;
     }
 
-    double pegaMedia(){
-        return somaDasAvaliacoes / totalDeAvaliacoes;
+    double pegarMedia(){
+        return somaDasAvaliacoes / totalDeAvaliacao;
     }
+
+
+
+
+
 }
