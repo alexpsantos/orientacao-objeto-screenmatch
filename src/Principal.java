@@ -1,3 +1,4 @@
+import br.com.alex.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alex.screenmatch.modelo.Filme;
 import br.com.alex.screenmatch.modelo.Serie;
 
@@ -30,6 +31,19 @@ public class Principal {
         minhaSerie.setEpisodiosPorTemporada(12);
         minhaSerie.setMinutosPorEpisodio(50);
         System.out.println("duração da serie: " + minhaSerie.getDuracaoEmMinutos());
+
+        Filme outroFilme = new Filme();
+
+        outroFilme.setNome("Avatar");
+        outroFilme.setAnoLancamento(2023);
+        outroFilme.setDuracaoEmMinutos(200);
+
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.incluir(meuFilme);
+        calculadora.incluir(outroFilme);
+        calculadora.incluir(minhaSerie);
+        System.out.println(calculadora.getTempoTotal());
 
     }
 }
