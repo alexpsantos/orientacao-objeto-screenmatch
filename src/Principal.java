@@ -1,4 +1,6 @@
 import br.com.alex.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alex.screenmatch.calculos.FiltroRecomendacao;
+import br.com.alex.screenmatch.modelo.Episodio;
 import br.com.alex.screenmatch.modelo.Filme;
 import br.com.alex.screenmatch.modelo.Serie;
 
@@ -16,7 +18,7 @@ public class Principal {
 
         meuFilme.avaliar(8);
         meuFilme.avaliar(9);
-        meuFilme.avaliar(6);
+        meuFilme.avaliar(7);
 
 
         System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacao());
@@ -44,6 +46,16 @@ public class Principal {
         calculadora.incluir(outroFilme);
         calculadora.incluir(minhaSerie);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtrar(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(minhaSerie);
+        episodio.setTotalVisualizacoes(300);
+
+        filtro.filtrar(episodio);
 
     }
 }
